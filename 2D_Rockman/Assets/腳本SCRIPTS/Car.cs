@@ -35,7 +35,21 @@ public class Car : MonoBehaviour
     //顏色 Color.顏色  
     public Color color=Color.red;
     //新顏色 new Color(r,g,b,a)範圍0到1
-    public Color color1= new Color(0.5f, 0.5f, 0.5f, 1f);     
+    public Color color1= new Color(0.5f, 0.5f, 0.5f, 1f);
     //座標二維-四維 Vector2,3,4
-    //
+    public Vector2 v2=Vector2.one;
+    //自訂座標 new Vector2,3,4 (x,y,z,w)
+    public Vector2 v2my=new Vector2(4,4);
+    //按鍵 KeyCode
+    public KeyCode key1;//none不指定
+    //KeyCode.A
+    //KeyCode.Mouse0 滑鼠左0右1滾輪2
+
+    //遊戲物件跟元件
+    //遊戲物件GameObject
+    public GameObject obj1;
+    public GameObject obj2;
+    //元件 Compontent-屬性面板可摺疊的
+    //名稱去掉空格
+    public Transform tra;   //可儲存任何包含Transform元件的產物
 }
