@@ -6,6 +6,12 @@ public class Car : MonoBehaviour
     //欄位語法
     //修飾詞 類型 名稱 指定 預設值 結尾
     
+    //屬性欄位語法
+    //[屬性名稱(屬性內容)]
+    //標題 Header("字串")
+    //提示 ToolTip("字串")
+    //範圍 Range(最小值,最大值)-限定數值類型
+   
     //修飾詞
     //私人 不顯示 private
     //公開 顯示 public
@@ -17,11 +23,7 @@ public class Car : MonoBehaviour
     //布林值 bool true/false
     //關鍵字 顏色:藍色
     
-    //屬性欄位語法
-    //[屬性名稱(屬性內容)]
-    //標題 Header("字串")
-    //提示 ToolTip("字串")
-    //範圍 Range(最小值,最大值)-限定數值類型
+    
     [Header("汽車CC數"),Tooltip("汽車CC數"),Range(1000,5000)]
     public int cc=2000;//公升數
     [Header("汽車重量"), Tooltip("汽車重量"), Range(0.5f, 10f)]
