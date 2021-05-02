@@ -109,6 +109,9 @@ public class Car : MonoBehaviour
         Drive(999, "轟轟轟", "爆炸特效");
         Drive(777, "閃電特效");         //錯誤-特效在音效上
         Drive(777, effect: "閃電特效"); //正確-指定特效參數
+
+        float bmi=BMI(1.68f, 60);
+        print("計算後的BMI" + bmi);
     }
 
     //更新事件執行時間點與次數:開始事件後以每秒約60次執行 60fps
@@ -181,7 +184,16 @@ public class Car : MonoBehaviour
         print("開車音效" + sound);
         print("特效:" + effect);
     }
-
+    /// <summary>
+    /// 計算BMI公式
+    /// </summary>
+    /// <param name="height">身高</param>
+    /// <param name="weight">體重</param>
+    /// <returns>公式</returns>
+    private float BMI(float height,float weight)
+    {
+        return weight / (height * height);
+    }
     #endregion
 
 }
