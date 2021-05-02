@@ -2,28 +2,33 @@
 
 public class Car : MonoBehaviour
 {
+    #region 摺疊
+    //#region 摺疊程式開始處
+    //#endregion 結束
+    #endregion
+    #region 欄位
     //物件資料-欄位Field:儲存物件資料
     //欄位語法
     //修飾詞 類型 名稱 指定 預設值 結尾
-    
+
     //屬性欄位語法
     //[屬性名稱(屬性內容)]
     //標題 Header("字串")
     //提示 ToolTip("字串")
     //範圍 Range(最小值,最大值)-限定數值類型
-   
+
     //修飾詞
     //私人 不顯示 private
     //公開 顯示 public
-    
+
     //四大類型
     //整數int 
     //浮點數 float 結尾要加f
     //字串 string 要加雙引號""
     //布林值 bool true/false
     //關鍵字 顏色:藍色
-    
-    
+
+
     [Header("汽車CC數"),Tooltip("汽車CC數"),Range(1000,5000)]
     public int cc=2000;//公升數
     [Header("汽車重量"), Tooltip("汽車重量"), Range(0.5f, 10f)]
@@ -54,4 +59,82 @@ public class Car : MonoBehaviour
     //元件 Compontent-屬性面板可摺疊的
     //名稱去掉空格
     public Transform tra;   //可儲存任何包含Transform元件的產物
+    #endregion; 
+    #region 事件
+    public int number = 1;
+    public bool test = false ;
+    public string prop ="紅色藥水";
+
+    //事件:在特定時間點會被執行的方法
+    //Unity提供的事件:開始Start 更新Update
+
+    //開始事件執行時間點與次數:播放遊戲後執行一次
+    //應用:數值初始化，例如:遊戲一開始多少金幣或生命值等等...
+    private void Start()
+    {
+        //print(任何資料)-輸出資料到Console儀表板上
+        print("我是開始事件喔");
+
+        //欄位存取
+        //取得
+        //語法:欄位名稱
+        //字串串接:字串+其他欄位
+        print("number取得欄位"+ number);
+
+        //存放
+        //語法:欄位名稱 指定 值
+        //值必須與此欄位類型相同
+        print("存放欄位後的的結果" + test);
+        test = true;
+        print("存放欄位後的的結果"+test);
+
+        print("存放後的道具名稱:" + prop);
+        prop = "藍色藥水";
+        print("存放後的道具名稱:" + prop);
+
+        //呼叫方法
+        //方法名稱()
+        Test();
+        //傳回方法
+        //傳回類型 名稱 = 傳回方法()
+        int t = Ten();
+        print("傳回方法的結果" + t);
+    }
+
+    //更新事件執行時間點與次數:開始事件後以每秒約60次執行 60fps
+    //應用:監聽玩家輸入與物件持續行為，例如:玩家有沒有按按鈕或讓物體持續移動
+    private void Update()
+    {
+        print("我是更新事件喔");
+
+    }
+    #endregion
+    #region 方法
+    //方法:保存較複雜或演算法的程式區塊
+    //語法:
+    //修飾詞 傳回類型 名稱(){較複雜或演算法的程式區塊}
+    //void 無傳回:使用這個方法不會有傳回
+    //方法需要被[呼叫]才會執行
+    /// <summary>
+    /// 摘要
+    /// 我是一個測試方法
+    /// </summary>
+    private void Test()
+    {
+        print("我是測試方法");
+    }
+
+    //如果不是無傳回 void
+    //在大括號內必須使用 傳回 return 值(必須與傳回類型相同)
+    /// <summary>
+    /// 傳回整數十的方法
+    /// </summary>
+    /// <returns>整數十</returns>
+    private int Ten()
+    {
+        return 10;
+    }
+
+    #endregion
+
 }

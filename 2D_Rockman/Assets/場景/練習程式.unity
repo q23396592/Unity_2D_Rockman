@@ -240,6 +240,15 @@ MonoBehaviour:
   hasWindow: 1
   color: {r: 1, g: 0, b: 0, a: 1}
   color1: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  v2: {x: 1, y: 1}
+  v2my: {x: 4, y: 4}
+  key1: 0
+  obj1: {fileID: 0}
+  obj2: {fileID: 0}
+  tra: {fileID: 0}
+  number: 1
+  test: 0
+  prop: "\u7D05\u8272\u85E5\u6C34"
 --- !u!212 &2143928416
 SpriteRenderer:
   m_ObjectHideFlags: 0
