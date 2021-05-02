@@ -29,24 +29,24 @@ public class Car : MonoBehaviour
     //關鍵字 顏色:藍色
 
 
-    [Header("汽車CC數"),Tooltip("汽車CC數"),Range(1000,5000)]
-    public int cc=2000;//公升數
+    [Header("汽車CC數"), Tooltip("汽車CC數"), Range(1000, 5000)]
+    public int cc = 2000;//公升數
     [Header("汽車重量"), Tooltip("汽車重量"), Range(0.5f, 10f)]
-    public float weight =1.5f;//重量
+    public float weight = 1.5f;//重量
     [Header("汽車品牌")]
-    public string brand ="BMW";//品牌
+    public string brand = "BMW";//品牌
     [Header("汽車有無天窗")]
-    public bool hasWindow =true;//天窗
+    public bool hasWindow = true;//天窗
 
     //Unity 常見類型
     //顏色 Color.顏色  
-    public Color color=Color.red;
+    public Color color = Color.red;
     //新顏色 new Color(r,g,b,a)範圍0到1
-    public Color color1= new Color(0.5f, 0.5f, 0.5f, 1f);
+    public Color color1 = new Color(0.5f, 0.5f, 0.5f, 1f);
     //座標二維-四維 Vector2,3,4
-    public Vector2 v2=Vector2.one;
+    public Vector2 v2 = Vector2.one;
     //自訂座標 new Vector2,3,4 (x,y,z,w)
-    public Vector2 v2my=new Vector2(4,4);
+    public Vector2 v2my = new Vector2(4, 4);
     //按鍵 KeyCode
     public KeyCode key1;//none不指定
     //KeyCode.A
@@ -62,8 +62,8 @@ public class Car : MonoBehaviour
     #endregion; 
     #region 事件
     public int number = 1;
-    public bool test = false ;
-    public string prop ="紅色藥水";
+    public bool test = false;
+    public string prop = "紅色藥水";
 
     //事件:在特定時間點會被執行的方法
     //Unity提供的事件:開始Start 更新Update
@@ -79,14 +79,14 @@ public class Car : MonoBehaviour
         //取得
         //語法:欄位名稱
         //字串串接:字串+其他欄位
-        print("number取得欄位"+ number);
+        print("number取得欄位" + number);
 
         //存放
         //語法:欄位名稱 指定 值
         //值必須與此欄位類型相同
         print("存放欄位後的的結果" + test);
         test = true;
-        print("存放欄位後的的結果"+test);
+        print("存放欄位後的的結果" + test);
 
         print("存放後的道具名稱:" + prop);
         prop = "藍色藥水";
@@ -99,6 +99,16 @@ public class Car : MonoBehaviour
         //傳回類型 名稱 = 傳回方法()
         int t = Ten();
         print("傳回方法的結果" + t);
+
+        Drive50();
+        Drive100();
+        Drive300();
+        //呼叫方法要有相同數量的參數
+        //有預設值的參數為[選填式參數]
+        Drive(200, "咻咻咻");
+        Drive(999, "轟轟轟", "爆炸特效");
+        Drive(777, "閃電特效");         //錯誤-特效在音效上
+        Drive(777, effect: "閃電特效"); //正確-指定特效參數
     }
 
     //更新事件執行時間點與次數:開始事件後以每秒約60次執行 60fps
@@ -112,7 +122,7 @@ public class Car : MonoBehaviour
     #region 方法
     //方法:保存較複雜或演算法的程式區塊
     //語法:
-    //修飾詞 傳回類型 名稱(){較複雜或演算法的程式區塊}
+    //修飾詞 傳回類型 名稱(參數1,參數2  ){較複雜或演算法的程式區塊}
     //void 無傳回:使用這個方法不會有傳回
     //方法需要被[呼叫]才會執行
     /// <summary>
@@ -130,9 +140,46 @@ public class Car : MonoBehaviour
     /// 傳回整數十的方法
     /// </summary>
     /// <returns>整數十</returns>
+    /// 
     private int Ten()
     {
         return 10;
+    }
+
+    //舉例:
+    //三個方法 1. 以時速 50 開車 2. 時速 100 3. 時速300
+    //加新功能 要有音效
+    //加特效
+    private void Drive50()
+    {
+        print("開車時數:" + 50);
+        print("開車音效");
+    }
+    private void Drive100()
+    {
+        print("開車時數:" + 100);
+        print("開車音效");
+    }
+    private void Drive300()
+    {
+        print("開車時數:" + 300);
+        print("開車音效");
+    }
+
+    //用參數解決 Paramater
+    //參數與法:類型 參數名稱
+    //有預設值的參數只能寫在最右邊
+    /// <summary>
+    /// 開車
+    /// </summary>
+    /// <param name="speed">開車的時數</param>
+    /// <param name="sound">開車的音效</param>
+    /// <param name="effect">特效</param>
+    private void Drive(int speed, string sound = "咻", string effect = "灰塵特效")
+    {
+        print("開車時數:" + speed);
+        print("開車音效" + sound);
+        print("特效:" + effect);
     }
 
     #endregion
