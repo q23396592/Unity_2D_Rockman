@@ -11,6 +11,14 @@ public class API : MonoBehaviour
     public Transform tra2;
     public SpriteRenderer spr;
 
+
+    public Camera cam;
+    public SpriteRenderer spr2;
+    public Transform tra;
+    public Rigidbody2D rig2D;
+    
+
+
     private void Start()
     {
         //靜態
@@ -30,6 +38,12 @@ public class API : MonoBehaviour
         spr.color=new Color (1,0,0);
         spr.flipX=true;
 
+
+        print("攝影機深度" + cam.depth);
+        print("圖片顏色"+spr2.color);
+        print("背景顏色"+ cam.backgroundColor);
+        spr2.flipY=true;
+
     }
     private void Update()
     {
@@ -38,6 +52,8 @@ public class API : MonoBehaviour
         //物件名稱.非靜態方法(對應參數)
         tra2.Translate(0.1f, 0, 0);
 
+        tra.Rotate(0,0,1);
+        rig2D.AddForce(new Vector2(0,10));
 
         
     }

@@ -10223,7 +10223,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1990414159
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10252,7 +10252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6034e162dcb91e4bb10e9ced8185cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10.5
+  speed: 100
   jump: 100
   hp: 100
   floor: 0
@@ -10260,6 +10260,8 @@ MonoBehaviour:
   bullet_spawnpoint: {fileID: 0}
   bullet_speed: 800
   bullet_sound: {fileID: 0}
+  groundOffset: {x: 0, y: 0, z: 0}
+  groundRadius: 0.2
 --- !u!1 &2016863089
 GameObject:
   m_ObjectHideFlags: 0
