@@ -9,6 +9,7 @@ public class APIStatic : MonoBehaviour
 
     private void Start()
     {
+       
         //屬性 欄位 要知道如何存取
         //練習取得靜態屬性 Static Properties
         //語法
@@ -29,18 +30,38 @@ public class APIStatic : MonoBehaviour
         print("隨機攻擊力:" + attack);
 
         float n = Mathf.Abs(-99.9f);
+        print("絕對值結果"+n);
         #endregion
-      #region 練習
-        print("所有攝影機"+Camera.allCamerasCount);
-        print("重力"+Physics2D.gravity);
+        #region 練習
+        print("所有攝影機"+ Camera.allCamerasCount);
+        print("重力"+ Physics2D.gravity);
+
         Physics2D.gravity=new Vector2 (0,-20f);
         print("重力" + Physics2D.gravity);
+
+        //Application.OpenURL("https://unity.com/");
+
+        float f = Mathf.Floor(9.999f);
+        print("去除小數點後的結果"+ f);
+
+        float dist = Vector3.Distance(new Vector3(1, 1, 1),new Vector3(22, 22, 22));
+            print("與其他對象的距離：" + dist );
+        #endregion
     }
     private void Update()
     {
-        print("玩家是否按下任意鍵" +  Input.anyKeyDown);
-        print("遊戲時間" + Time.time);
+        #region 練習
+        //print("玩家是否按下任意鍵" +  Input.anyKeyDown);
+        //print("遊戲時間" + Time.time);
+        bool b = Input.GetKeyDown(KeyCode.Space);
+        print("按下空白鍵"+b);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            print("按下空白鍵");
+        }
+            #endregion
     }
-    #endregion
+    
 
 }
